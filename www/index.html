@@ -16,15 +16,16 @@
           var password = document.getElementById("password").value
           if (username==="user" && password==="pass")
           {
-            var navigator = document.getElementById("navigator");
-            navigator.resetToPage("shackleton.html");
+            var navigator = document.getElementById('navigator');
+            navigator.resetToPage('shackleton.html');
       }
 }
     </script>
+
 </head>
 <body>
 	<br />
-  <ons-navigator id=”navigator”>
+  <ons-navigator id='navigator'>
   <ons-page>
 
  <div style="text-align: center; margin-top: 200px">
@@ -33,11 +34,8 @@
  </ons-input>
  </p>
  <p>
- <ons-input
- id="password"
- placeholder="Password"
- type="password"
- modifier="underbar">
+ <ons-input id="password" placeholder="Password" type="password" modifier="underbar">
+
  </ons-input>
  </p>
  <p>
@@ -46,9 +44,13 @@
  </div>
 </ons-page>
   </ons-navigator>
-<ons-template id=”shackleton.html”>>
-<ons-page id=”shackleton”>
 
+<ons-template id='shackleton.html'>
+<ons-page id='shackleton'>
+<ons-toolbar id="home-toolbar">
+  <div class="left">Home</div>
+  <div class="center" onClick = “quiz()”>Quiz</div> 
+</ons-toolbar>
   <h2>Ernest Shackleton (1874 - 1922)</h2>
   <img src="images/shackletonicon.jpg" alt="Ernest Shackleton at Dulwich College">
   <p>Sir Ernest Shackleton was an Anglo-Irish Antarctic explorer and is famous, principally, for leading the Imperial Trans-Antartic (Endurance) Expedition of 1914-16.</p>
@@ -58,5 +60,8 @@
   <p>During his life he made three trips to the Antarctic. As well as climbing Mount Erebus he made many important scientific discoveries. On his fourth expedition to circumnavigate the Antartic he died of a heart attack. He was buried on the Island of South Georgia. </p>
 </ons-page>
 </ons-template>
+<ons-template id=”quiz.html”>
+  <div id=”quiz”>
+
     </body>
 </html>
