@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <script>
+    </script>
+</head>
+<body>
+<ons-page id="quiz.html">
+<div id = "quiz">
+<h3>Quiz</h3>
+<p>How far (according to Shackleton's wikipedia page) is it from Elephant Island to South Georgia in Nautical Miles? <span class = "myquote" id = ans></span></p>
+<p><button onClick = "chk_ans()">Check Answer</button></p>
+</div>
+<ons-toolbar id="home-toolbar">
+ <div class="left" onClick="var navigator = document.getElementById('navigator');
+ navigator.popPage()">
+Back
+</div>
+<script>
+    function chk_ans()
+{
+  my_elem = document.getElementById("ans");
+	my_elem.innerHTML = "800 nautical miles";
+	my_elem.style.color = "red";
+}
+    function quiz()
+{
+  var navigator = document.getElementById('navigator');
+  navigator.pushPage('quiz.html');
+}
+    </script>
+</ons-toolbar>
+</ons-page>
+</body>
+</html>
