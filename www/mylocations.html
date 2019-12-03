@@ -1,18 +1,30 @@
+  
 <!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <link rel="stylesheet" href="components/loader.css">
-    <script src="components/loader.js"></script>
-    <script>
-        //
-        // TODO: Write JavaScript code here
-        //
-    </script>
+  <head>
+
 </head>
+
 <body>
-    <!-- TODO: Please edit here -->
+<ons-page id=”mylocations.html”>
+
+  <script>
+   function show_title()
+  {
+  var my_value = localStorage.getItem('www.me.ti/hi');
+  //console.log(my_value) (firebase)
+  document.getElementById("my_loc").innerHTML = my_value;
+  var pic_URI = localStorage.getItem("MyAppPicture");
+  var pic = document.getElementById("pic_display");
+  pic.src = pic_URI;
+  }
+  </script>
+
+<h2 align='center'>My Locations</h2>
+<h3 id='my_loc'></h3>
+ <p><img id='pic_display' height="200px"></p>
+ <ons-button id = "Reveal Location" onClick = 'show_title()'>Refresh</ons-button>
+
+</ons-page>
 </body>
 </html>

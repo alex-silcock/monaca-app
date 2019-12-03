@@ -1,18 +1,58 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <link rel="stylesheet" href="components/loader.css">
-    <script src="components/loader.js"></script>
-    <script>
-        //
-        // TODO: Write JavaScript code here
-        //
-    </script>
+  <head>
+
 </head>
+
 <body>
-    <!-- TODO: Please edit here -->
+<ons-page id=”addlocations.html”>
+
+<script>
+  function save_details()
+  {
+  entered_text = document.getElementById("loc_title").value
+  localStorage.setItem('www.me.ti/hi', entered_text );
+  }
+  function snapPicture()
+{
+ navigator.camera.getPicture(successCallback, FailCallback, 
+{
+ quality: 50,
+ destinationType: Camera.DestinationType.FILE_URI,
+ allowEdit: false,
+ correctOrientation: true,
+ targetWidth: 600,
+ saveToPhotoAlbum: true
+ });
+  function successCallback (imageURI)
+ {
+ var image = document.getElementById ('myImage');
+// display image
+ image.src = imageURI;
+// save image path to local storage
+ localStorage.setItem("MyAppPicture", imageURI);
+ }
+ function FailCallback (message)
+ {
+ alert ('Error!!!: ' + message);
+ }
+ };
+  </script>
+
+<ons-list>
+
+ <ons-list-header>Type in a name for your location</ons-list-header>
+ <p> <ons-input id="loc_title" modifier="underbar" placeholder= "Enter 
+Location Name" ></ons-input></p>
+<ons-list-header>Save the location</ons-list-header>
+ <p> <ons-button id = "Save details" onClick = 'save_details()'>Save</onsbutton></p>
+<ons-list-header>Add a live picture</ons-list-header>
+ <ons-button id = "cameraTakePicture" onClick = 'snapPicture()'>Click
+to snap</ons-button>
+<p> <img id = "myImage" height="70px"></img><p>
+
+ </ons-list> 
+
+</ons-page>
 </body>
 </html>
