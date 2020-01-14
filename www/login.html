@@ -17,8 +17,15 @@ function login()
  {
  // if user exists then check password
  if (snapshot.val().pass == password)
+{
+ if (username == "user1")
  {
- // if password is correct then load shackleton.html page
+ var i = document.getElementById("my_list");
+ var c = document.createElement("ons-list-item");
+ c.onclick = function() {loadPage('admin_panel.html') };
+ c.innerHTML = "Admin Panel";
+ i.appendChild(c);
+ }
  var navigator = document.getElementById('navigator');
  navigator.resetToPage('shackleton.html');
  }
